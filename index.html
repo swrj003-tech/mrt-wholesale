@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Global B2B Wholesale & Sourcing | MRT International Holding LLC</title>
+  <meta name="description" content="Wyoming's trusted partner for global B2B sourcing, contract manufacturing, and bulk supply chains across the USA, UAE, and international markets.">
+  <meta name="keywords" content="B2B sourcing, wholesale supplier, contract manufacturing, bulk e-commerce, global trade UAE, supply chain logistics, Wyoming trading company">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Premium Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-25..200" rel="stylesheet">
+  <!-- Theme Initializer to prevent Flash of Un-themed Content (FOUC) -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('mrt-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+
+  <!-- Custom Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 1. Navigation Header -->
+  <header class="mrt-nav">
+    <a href="index.html" class="mrt-logo">
+      <div class="logo-icon">M</div>
+      <span class="logo-text">MRT International</span>
+    </a>
+    
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="contact.html" class="nav-link">Sourcing Portal</a>
+    </nav>
+    
+    <div class="nav-right-actions">
+      <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Color Theme">
+        <span class="material-symbols-outlined">dark_mode</span>
+      </button>
+      <a href="contact.html" class="btn-gold">
+        Bulk Inquiry
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+      <button class="nav-toggle-burger" id="mobileMenuToggle" aria-label="Open Navigation Menu">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Slide-out Overlay -->
+  <div class="mobile-navigation-overlay" id="mobileNavOverlay">
+    <button class="mobile-close-btn" id="mobileMenuClose">&times;</button>
+    <div class="mobile-links-container">
+      <a href="index.html" class="mobile-nav-item active">Home</a>
+      <a href="about.html" class="mobile-nav-item">About Us</a>
+      <a href="contact.html" class="mobile-nav-item">Sourcing Portal</a>
+      <a href="contact.html" class="btn-gold" style="margin-top: 2rem;">Get Quotes</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- 2. Hero Section -->
+    <section class="b2b-hero">
+      <div class="hero-media-wrapper">
+        <img src="assets/mrt-hero.png" alt="High-End Modern Supply Chain" class="hero-img" loading="eager">
+        <div class="hero-gradient-overlay"></div>
+      </div>
+      
+      <div class="hero-content-wrapper">
+        <span class="tagline" style="color: var(--accent-gold);">Direct-to-Factory B2B Sourcing &amp; Procurement</span>
+        <h1 class="hero-title-large">Direct Sourcing for Enterprise Retail</h1>
+        <p class="hero-subtitle-sub">
+          A secure physical supply chain gateway between primary manufacturers and scaling consumer brands. We establish audited contract manufacturing structures, manage laboratory compliance, and coordinate ocean and air freight directly to your domestic distribution centers.
+        </p>
+        <div class="hero-button-group">
+          <a href="contact.html" class="btn-gold">
+            Submit Sourcing RFP
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+          <a href="#calculator" class="btn-outline">
+            Run Volume Projection
+            <span class="material-symbols-outlined">calculate</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="hero-scroll-indicator">
+        <span>Scroll to Explore</span>
+        <div class="scroll-icon"></div>
+      </div>
+    </section>
+
+    <!-- 3. Value Pillars Section -->
+    <section class="section-padding container">
+      <div class="text-center">
+        <span class="tagline">Trading &amp; Procurement Protocols</span>
+        <h2 class="section-title">The Sourcing Framework</h2>
+        <p class="section-desc">Bypassing standard B2B middle-men and brokers. We establish direct factory contracts, manage on-site pre-shipment inspections, and coordinate complete customs clearance from end to end.</p>
+      </div>
+      
+      <div class="pillars-grid">
+        <!-- Pillar 1: Direct-to-Factory Procurement -->
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <span class="material-symbols-outlined">factory</span>
+          </div>
+          <h3 class="pillar-title">On-Site Production Audits</h3>
+          <p class="pillar-desc">We verify factory capability directly on the production floor. Our local agents conduct machinery calibration reviews, raw material supply chain audits, and social compliance checks before drafting contract terms.</p>
+        </div>
+        
+        <!-- Pillar 2: Regulatory & Compliance -->
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <span class="material-symbols-outlined">gavel</span>
+          </div>
+          <h3 class="pillar-title">Compliance &amp; Lab Testing</h3>
+          <p class="pillar-desc">We manage materials certification from the source. We coordinate third-party laboratory trials for product lines, ensuring all exports meet EPA, FCC, CE, RoHS, or FDA requirements before cargo dispatch.</p>
+        </div>
+        
+        <!-- Pillar 3: Incoterms & Price Structures -->
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <span class="material-symbols-outlined">receipt_long</span>
+          </div>
+          <h3 class="pillar-title">Trade Finance &amp; Escrow</h3>
+          <p class="pillar-desc">Secure contract administration. All agreements operate under standardized ICC Incoterms 2020 (FOB, CIF, DDP), utilizing bank-hosted commercial escrows to protect capital during manufacturing phases.</p>
+        </div>
+        
+        <!-- Pillar 4: Customs & Freight Consolidation -->
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <span class="material-symbols-outlined">anchor</span>
+          </div>
+          <h3 class="pillar-title">Consolidation &amp; Logistics</h3>
+          <p class="pillar-desc">Streamlining the maritime corridor. We handle Less-than-Container Load (LCL) and Full Container Load (FCL) consolidation, customs entry filings, export licenses, and final-mile domestic dispatch.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Aesthetic Sourcing Categories Section -->
+    <section class="section-padding" style="background-color: var(--bg-white); border-top: 1px solid var(--border-light);">
+      <div class="container">
+        <div class="text-center">
+          <span class="tagline">Sourcing Capabilities</span>
+          <h2 class="section-title">Established Sourcing Verticals</h2>
+          <p class="section-desc">Our procurement desk maintains direct, audited relationships with Tier-1 manufacturers across four core lifestyle and consumer divisions.</p>
+        </div>
+        
+        <div class="category-editorial-layout">
+          <!-- Category 1: Home & Living (Double Wide) -->
+          <div class="cat-editorial-card double-wide">
+            <div class="cat-media" style="background-image: url('assets/bento-home.png');"></div>
+            <div class="cat-overlay"></div>
+            <div class="cat-content-block">
+              <h3 class="cat-title-label">Home, Decor &amp; Living</h3>
+              <p class="cat-desc-para">FSC-certified solid wood furniture, organic linen fabrics, custom commercial lighting assemblies, and contemporary home essentials built for heavy retail container-load volume.</p>
+              <a href="contact.html?cat=home" class="cat-action-link">
+                Inquire Sourcing
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Category 2: Beauty & Wellness -->
+          <div class="cat-editorial-card">
+            <div class="cat-media" style="background-image: url('assets/bento-beauty.png');"></div>
+            <div class="cat-overlay"></div>
+            <div class="cat-content-block">
+              <h3 class="cat-title-label">Beauty, Cosmetics &amp; Packaging</h3>
+              <p class="cat-desc-para">ISO-certified cosmetic formulations, organic extracts, medical-grade spa wellness supplies, and eco-friendly PCR custom container molds.</p>
+              <a href="contact.html?cat=beauty" class="cat-action-link">
+                Inquire Sourcing
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Category 3: Tech & Smart Gadgets -->
+          <div class="cat-editorial-card">
+            <div class="cat-media" style="background-image: url('assets/bento-tech.png');"></div>
+            <div class="cat-overlay"></div>
+            <div class="cat-content-block">
+              <h3 class="cat-title-label">Consumer Electronics &amp; Accessories</h3>
+              <p class="cat-desc-para">OEM mobile device peripherals, Qi2-compliant wireless charging modules, smart home automation products, and CE/FCC/RoHS-certified audio hardware.</p>
+              <a href="contact.html?cat=tech" class="cat-action-link">
+                Inquire Sourcing
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Category 4: General Lifestyle & Pets (Double Wide) -->
+          <div class="cat-editorial-card double-wide">
+            <div class="cat-media" style="background-image: url('assets/bento-pets.png');"></div>
+            <div class="cat-overlay"></div>
+            <div class="cat-content-block">
+              <h3 class="cat-title-label">Premium Pet Products &amp; Baby Essentials</h3>
+              <p class="cat-desc-para">Heavy-duty outdoor pet gear, BPA-free baby developmental toy collections, and premium GOTS-certified infant organic cotton apparel, tested against lead and chemical restrictions.</p>
+              <a href="contact.html?cat=lifestyle" class="cat-action-link">
+                Inquire Sourcing
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Production Feasibility & Logistics Configurator Section -->
+    <section class="section-padding pricing-calculator-section" id="calculator">
+      <div class="container">
+        <div class="calculator-wrapper">
+          <!-- Control Panel -->
+          <div class="calc-control-panel">
+            <span class="tagline" style="color: var(--accent-gold);">Supply Chain Logistics Terminal</span>
+            <h2 class="calc-title">Production Feasibility &amp; Logistics Configurator</h2>
+            <p class="calc-subtitle">Model your annual manufacturing parameters to evaluate container spatial allocations, intercontinental sea-freight lane transits, quality audits, and trade payment structures.</p>
+            
+            <!-- Category Sourcing Vertical Selector -->
+            <div class="category-select-wrapper" style="margin-bottom: 2.5rem;">
+              <label class="calc-input-label">1. Sourcing Division / Vertical</label>
+              <div class="category-select-grid">
+                <button type="button" class="calc-cat-card active" data-category="home">
+                  <span class="material-symbols-outlined">chair</span>
+                  <span class="calc-cat-name">Home &amp; Decor</span>
+                </button>
+                <button type="button" class="calc-cat-card" data-category="beauty">
+                  <span class="material-symbols-outlined">spa</span>
+                  <span class="calc-cat-name">Beauty &amp; Packaging</span>
+                </button>
+                <button type="button" class="calc-cat-card" data-category="tech">
+                  <span class="material-symbols-outlined">devices</span>
+                  <span class="calc-cat-name">Electronics</span>
+                </button>
+                <button type="button" class="calc-cat-card" data-category="pets">
+                  <span class="material-symbols-outlined">pets</span>
+                  <span class="calc-cat-name">Pet &amp; Kids Gear</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Global Port Selector -->
+            <div class="port-select-wrapper" style="margin-bottom: 2.5rem;">
+              <label class="calc-input-label" for="calcDestinationPort">2. Primary Discharge Port (Destination)</label>
+              <div class="select-container-dark">
+                <select class="custom-port-dropdown" id="calcDestinationPort">
+                  <option value="lax">US West Coast (Port of LA / Long Beach - LAX/LGB)</option>
+                  <option value="nyc">US East Coast (Port of New York / New Jersey - NYC/NJ)</option>
+                  <option value="rot">Western Europe (Port of Rotterdam - ROT)</option>
+                  <option value="dxb">Middle East (Port of Jebel Ali, Dubai - DXB)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Volume Slider -->
+            <div class="slider-container">
+              <div class="slider-labels">
+                <span>3. Annual Procurement Target</span>
+                <span class="text-gold" id="calcVolumeDisplay">5,000 Units</span>
+              </div>
+              <input type="range" class="slider-input" id="wholesaleSlider" min="5000" max="500000" step="5000" value="5000">
+              <div class="slider-ticks">
+                <span>5,000 Units (MOQ)</span>
+                <span>250,000 Units</span>
+                <span>500,000+ Units</span>
+              </div>
+            </div>
+            
+            <div class="tier-highlights">
+              <!-- Tier 1 -->
+              <div class="tier-highlight-card active" id="tierStarterCard">
+                <div class="tier-h-name">Consolidated LCL Cargo</div>
+                <div class="tier-h-val">5K - 49K units</div>
+              </div>
+              
+              <!-- Tier 2 -->
+              <div class="tier-highlight-card" id="tierScaleCard">
+                <div class="tier-h-name">Dedicated FCL Contract</div>
+                <div class="tier-h-val">50K - 249K units</div>
+              </div>
+              
+              <!-- Tier 3 -->
+              <div class="tier-highlight-card" id="tierEliteCard">
+                <div class="tier-h-name">Enterprise Sourcing Desk</div>
+                <div class="tier-h-val">250K+ units</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Results Card -->
+          <div class="calc-result-panel">
+            <div class="result-header">
+              <div class="res-tier-name">PRODUCTION FEASIBILITY ANALYSIS</div>
+              <div class="res-volume-display text-gold" id="calcTierName" style="font-size: 2.2rem; line-height: 1.2;">Consolidated LCL</div>
+            </div>
+            
+            <div class="result-metrics">
+              <!-- Metric 1 -->
+              <div class="metric-line">
+                <span class="m-label">CBM Volume Allocation</span>
+                <span class="m-val highlight-gold" id="calcDiscountVal">2.25 CBM (Consolidated LCL)</span>
+              </div>
+              
+              <!-- Metric 2 -->
+              <div class="metric-line">
+                <span class="m-label">Quality Control Audit Standard</span>
+                <span class="m-val" id="calcSupportVal">Pre-Shipment Inspections (AQL 2.5)</span>
+              </div>
+              
+              <!-- Metric 3 -->
+              <div class="metric-line">
+                <span class="m-label">Commercial Trade Payment Framework</span>
+                <span class="m-val" id="calcBrandingVal">30% T/T Deposit / 70% against Telex B/L</span>
+              </div>
+              
+              <!-- Metric 4: Vertical Timeline -->
+              <div class="metric-line-vertical">
+                <span class="m-label">Dynamic Production &amp; Transit Voyage Timeline</span>
+                <div class="timeline-visual-bar" id="timelineBar">
+                  <div class="timeline-segment production-seg" style="width: 40%;" data-label="Production: 25d"></div>
+                  <div class="timeline-segment voyage-seg" style="width: 50%;" data-label="Voyage: 30d"></div>
+                  <div class="timeline-segment customs-seg" style="width: 10%;" data-label="Port: 5d"></div>
+                </div>
+                <div class="timeline-caption-text" id="calcSpeedVal">
+                  Estimated Total: 60 Days (FOB Jebel Ali to Port of LAX/LGB)
+                </div>
+              </div>
+            </div>
+            
+            <a href="contact.html" id="calcSubmitBtn" class="btn-gold text-center" style="width: 100%; justify-content: center; margin-top: 2rem;">
+              Request Custom Logistics Quote
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Supply Chain Map Section -->
+    <section class="section-padding sourcing-map-section">
+      <div class="container map-layout-grid">
+        <div class="map-details">
+          <span class="tagline">Intercontinental Corridor</span>
+          <h2 class="section-title" style="color: var(--primary-obsidian);">Dubai - Wyoming Trade Lanes</h2>
+          <p class="section-desc" style="margin-bottom: 3rem; text-align: left;">
+            Our corporate structure bridges American corporate backing with Middle Eastern logistics hubs. Operating under **MRT International Holding LLC**, we leverage distinct regional hubs for contract security and cargo execution:
+          </p>
+          
+          <div style="display: flex; flex-direction: column; gap: 2rem; border-left: 2px solid var(--accent-gold); padding-left: 2rem; margin-bottom: 4rem;">
+            <div>
+              <p style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--accent-amber); letter-spacing: 0.1em; margin-bottom: 0.25rem;">Wyoming Registered Hub</p>
+              <p style="color: var(--text-dark); font-size: 0.95rem; line-height: 1.6; font-weight: 300;">
+                Handles financial escrow contracts, US Customs clearances, FDA filings, domestic retail legal frameworks, and cargo insurance.
+              </p>
+            </div>
+            <div>
+              <p style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--accent-amber); letter-spacing: 0.1em; margin-bottom: 0.25rem;">Dubai Sourcing &amp; Operational Desk</p>
+              <p style="color: var(--text-dark); font-size: 0.95rem; line-height: 1.6; font-weight: 300;">
+                Supervises factory-floor quality inspections, raw material audits, laboratory compliance verification, LCL/FCL transshipment, and Jebel Ali Port customs clearings.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Human Sourcing Details Panel instead of generic map -->
+        <div style="background-color: var(--bg-cream); border: 1px solid var(--border-medium); border-radius: 8px; padding: 4rem 3.5rem;">
+          <h3 class="pillar-title" style="font-size: 1.6rem; margin-bottom: 1.5rem;">Logistical Standards</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2.5rem; font-weight: 300;">
+            All trade agreements are strictly standardized. We execute and monitor shipments with certified international agencies, guaranteeing product authenticity and safe delivery:
+          </p>
+          
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.25rem; font-size: 0.9rem; font-weight: 500; color: var(--primary-obsidian);">
+            <li style="display: flex; align-items: center; gap: 12px;">
+              <span class="material-symbols-outlined" style="color: var(--accent-gold); font-size: 1.25rem;">task_alt</span>
+              Incoterms 2020 Compliance (FOB, CIF, DDP)
+            </li>
+            <li style="display: flex; align-items: center; gap: 12px;">
+              <span class="material-symbols-outlined" style="color: var(--accent-gold); font-size: 1.25rem;">task_alt</span>
+              Third-Party Audits via SGS or TÜV Rheinland
+            </li>
+            <li style="display: flex; align-items: center; gap: 12px;">
+              <span class="material-symbols-outlined" style="color: var(--accent-gold); font-size: 1.25rem;">task_alt</span>
+              Secure Milestone-Based ESCROW Contract Routing
+            </li>
+            <li style="display: flex; align-items: center; gap: 12px;">
+              <span class="material-symbols-outlined" style="color: var(--accent-gold); font-size: 1.25rem;">task_alt</span>
+              GOTS Organic Cotton &amp; FSC Wood Certifications Checked
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Corporate Testimonials Section -->
+    <section class="section-padding container">
+      <div class="text-center">
+        <span class="tagline">Procurement Case Studies</span>
+        <h2 class="section-title">Wholesale Partnerships</h2>
+        <p class="section-desc">Read actual case study feedback from commercial importers, retail buyers, and high-volume brand executives.</p>
+      </div>
+      
+      <div class="testimonials-row-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-editorial-card">
+          <div class="quote-symbol">“</div>
+          <p class="testimonial-quote-text">
+            "We had continuous customs delays sourcing FSC-certified acacia tabletops through generic trade sites. MRT established a direct factory connection, resolved the environmental filing hurdles, and now manages our seasonal pipeline."
+          </p>
+          <div class="testimonial-client-meta">
+            <div class="client-avatar-placeholder">AH</div>
+            <div class="client-name-details">
+              <span class="c-name">Arthur Howell</span>
+              <span class="c-company">Homestead Brands (USA)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="testimonial-editorial-card">
+          <div class="quote-symbol">“</div>
+          <p class="testimonial-quote-text">
+            "Verifying certified organic baby wellness textiles was a regulatory nightmare. MRT's Dubai desk did the direct factory floor audits, verified the GOTS logs, and dispatched physical pre-production samples to our office in 4 days."
+          </p>
+          <div class="testimonial-client-meta">
+            <div class="client-avatar-placeholder">ZM</div>
+            <div class="client-name-details">
+              <span class="c-name">Ziad Al-Mansoori</span>
+              <span class="c-company">Veda Wellness (UAE)</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="testimonial-editorial-card">
+          <div class="quote-symbol">“</div>
+          <p class="testimonial-quote-text">
+            "We scaled our smart home consumer tech catalog from 10K to 80K units monthly. MRT coordinated the custom OEM packaging blueprints, designed custom protective display boxes, and managed the FCL transshipment flawlessy."
+          </p>
+          <div class="testimonial-client-meta">
+            <div class="client-avatar-placeholder">SJ</div>
+            <div class="client-name-details">
+              <span class="c-name">Sarah Jenkins</span>
+              <span class="c-company">Aura Lifestyle LLC (UK)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 8. Premium Editorial Footer -->
+  <footer class="mrt-editorial-footer">
+    <div class="container">
+      <div class="footer-main-columns">
+        <!-- Col 1: Brand Info -->
+        <div>
+          <div class="footer-brand-logo-text">MRT International</div>
+          <p class="footer-brand-bio">
+            MRT International Holding LLC — Registered in Wyoming, USA. Leading global sourcing, contract supply chains, and B2B wholesale distribution channels. 
+          </p>
+          <div class="footer-social-strip">
+            <a href="#" class="social-circle-link" aria-label="Facebook"><span class="material-symbols-outlined" style="font-size: 1.25rem;">share</span></a>
+            <a href="#" class="social-circle-link" aria-label="LinkedIn"><span class="material-symbols-outlined" style="font-size: 1.25rem;">contacts</span></a>
+            <a href="#" class="social-circle-link" aria-label="Email"><span class="material-symbols-outlined" style="font-size: 1.25rem;">mail</span></a>
+          </div>
+        </div>
+        
+        <!-- Col 2: Navigation links -->
+        <div>
+          <h4 class="footer-col-header">B2B Portal</h4>
+          <ul class="footer-menu-links">
+            <li><a href="index.html" class="footer-menu-link">Home Portal</a></li>
+            <li><a href="about.html" class="footer-menu-link">Corporate Story</a></li>
+            <li><a href="contact.html" class="footer-menu-link">Intake Sourcing request</a></li>
+            <li><a href="contact.html" class="footer-menu-link">Bulk Wholesaler registration</a></li>
+          </ul>
+        </div>
+        
+        <!-- Col 3: Categories Links -->
+        <div>
+          <h4 class="footer-col-header">Sourcing Verticals</h4>
+          <ul class="footer-menu-links">
+            <li><a href="contact.html?cat=home" class="footer-menu-link">Home &amp; Decor</a></li>
+            <li><a href="contact.html?cat=beauty" class="footer-menu-link">Beauty &amp; Wellness</a></li>
+            <li><a href="contact.html?cat=tech" class="footer-menu-link">Consumer Electronics</a></li>
+            <li><a href="contact.html?cat=lifestyle" class="footer-menu-link">Pet &amp; Kids Supplies</a></li>
+          </ul>
+        </div>
+        
+        <!-- Col 4: Corporate Contacts -->
+        <div>
+          <h4 class="footer-col-header">Global Desk</h4>
+          <div class="footer-contact-item">
+            <span class="material-symbols-outlined footer-contact-icon">mail</span>
+            <div>
+              <p style="font-weight: 700; color: #fff; font-size: 0.8rem; text-transform: uppercase;">Corporate Communications</p>
+              <p>Info@mrtinternationalholding.com</p>
+            </div>
+          </div>
+          
+          <div class="footer-contact-item">
+            <span class="material-symbols-outlined footer-contact-icon">call</span>
+            <div>
+              <p style="font-weight: 700; color: #fff; font-size: 0.8rem; text-transform: uppercase;">Supply Hotline &amp; WhatsApp</p>
+              <p>+1 904 459 4398</p>
+            </div>
+          </div>
+          
+          <div class="footer-contact-item">
+            <span class="material-symbols-outlined footer-contact-icon">location_on</span>
+            <div>
+              <p style="font-weight: 700; color: #fff; font-size: 0.8rem; text-transform: uppercase;">Wyoming Registered Address</p>
+              <p>Wyoming, USA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom-row">
+        <p>&copy; 2026 MRT International Holding LLC. All Rights Reserved. For corporate wholesale use only.</p>
+        <div style="display: flex; gap: 2rem;">
+          <a href="#" class="footer-menu-link">Privacy Policy</a>
+          <a href="#" class="footer-menu-link">Terms &amp; Conditions</a>
+          <a href="#" class="footer-menu-link">B2B Terms of trade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core Javascript Client logic -->
+  <script src="js/main.js"></script>
+</body>
+</html>

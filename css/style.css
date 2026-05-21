@@ -1,0 +1,1678 @@
+/*
+  MRT INTERNATIONAL HOLDING LLC - B2B WHOLESALE & SOURCING
+  Custom Editorial CSS - Premium, Modern, and Ultra-Aesthetic
+*/
+
+/* -------------------------------------------------------------
+   1. Design System & Variables
+   ------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Color Palette - B2B Luxury Obsidian & Gold */
+  --primary-obsidian: #0b0f19;
+  --secondary-slate: #1e293b;
+  --accent-gold: #c5a880;
+  --accent-gold-hover: #b3946b;
+  --accent-amber: #d97706;
+  --bg-cream: #faf9f6;
+  --bg-white: #ffffff;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --border-light: rgba(197, 168, 128, 0.15);
+  --border-medium: rgba(197, 168, 128, 0.3);
+  
+  /* Layout & Animations */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s ease;
+  --shadow-premium: 0 30px 60px -15px rgba(11, 15, 25, 0.05);
+  --shadow-glow: 0 0 40px rgba(197, 168, 128, 0.15);
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+  --primary-obsidian: #faf9f6;
+  --secondary-slate: #f1f5f9;
+  --bg-cream: #090d16;
+  --bg-white: #0f1422;
+  --text-dark: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-light: rgba(197, 168, 128, 0.1);
+  --border-medium: rgba(197, 168, 128, 0.2);
+  --shadow-premium: 0 30px 60px -15px rgba(0, 0, 0, 0.4);
+}
+
+/* -------------------------------------------------------------
+   2. Reset & Typography Foundations
+   ------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--accent-gold);
+  color: var(--primary-obsidian);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* -------------------------------------------------------------
+   3. Utility Classes
+   ------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-padding {
+  padding: 8rem 0;
+}
+
+.text-center { text-align: center; }
+.text-gold { color: var(--accent-gold); }
+
+.tagline {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-amber);
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--primary-obsidian);
+  margin-bottom: 2rem;
+  font-weight: 800;
+}
+
+.section-desc {
+  max-width: 750px;
+  margin: 0 auto 5rem auto;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+/* -------------------------------------------------------------
+   4. Premium Header Navigation
+   ------------------------------------------------------------- */
+.mrt-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 1000;
+  background-color: rgba(11, 15, 25, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem;
+  transition: var(--transition-smooth);
+}
+
+.mrt-nav.scrolled {
+  height: 80px;
+  background-color: rgba(11, 15, 25, 0.98);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.mrt-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-amber));
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  box-shadow: var(--shadow-glow);
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+  color: #ffffff; /* Always visible white */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85); /* Always visible light slate/white */
+  position: relative;
+  padding: 10px 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-gold);
+  transition: var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent-gold);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Gold Theme Button */
+.theme-toggle-btn {
+  background: none;
+  border: 1px solid var(--border-medium);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--accent-gold);
+  transition: var(--transition-fast);
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--accent-gold);
+  color: #fff;
+}
+
+/* Call To Action Buttons */
+.btn-gold {
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-hover));
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1rem 2.25rem;
+  border-radius: 4px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--shadow-glow);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(197, 168, 128, 0.35);
+  background: linear-gradient(135deg, var(--accent-gold-hover), var(--accent-gold));
+}
+
+.btn-outline {
+  border: 1.5px solid var(--border-medium);
+  background: transparent;
+  color: var(--primary-obsidian);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1rem 2.25rem;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-outline:hover {
+  background-color: var(--accent-gold);
+  color: #fff;
+  border-color: var(--accent-gold);
+}
+
+.b2b-hero .btn-outline {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.b2b-hero .btn-outline:hover {
+  color: var(--primary-obsidian);
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* -------------------------------------------------------------
+   5. B2B Hero Section
+   ------------------------------------------------------------- */
+.b2b-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #060911;
+  color: #fff;
+  padding-top: 100px;
+  overflow: hidden;
+}
+
+.hero-media-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+  transform: scale(1.05);
+  animation: slowZoom 25s infinite alternate ease-in-out;
+}
+
+.hero-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 20%, #060911 80%),
+              linear-gradient(to bottom, transparent 60%, #060911 100%);
+  z-index: 2;
+}
+
+.hero-content-wrapper {
+  position: relative;
+  z-index: 3;
+  max-width: 1000px;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-title-large {
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 2rem;
+  line-height: 1;
+  color: #ffffff; /* Solid high-contrast white text fallback */
+  background: linear-gradient(to right, #ffffff 30%, #e2e8f0 70%, var(--accent-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle-sub {
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  font-weight: 300;
+  color: #cbd5e1;
+  max-width: 780px;
+  margin: 0 auto 3.5rem auto;
+  line-height: 1.8;
+}
+
+.hero-button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--accent-gold);
+}
+
+.scroll-icon {
+  width: 24px;
+  height: 40px;
+  border: 1.5px solid var(--accent-gold);
+  border-radius: 12px;
+  position: relative;
+}
+
+.scroll-icon::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background-color: var(--accent-gold);
+  border-radius: 2px;
+  animation: mouseWheel 2s infinite ease;
+}
+
+@keyframes mouseWheel {
+  0% { opacity: 1; top: 8px; }
+  100% { opacity: 0; top: 22px; }
+}
+
+@keyframes slowZoom {
+  0% { transform: scale(1.02); }
+  100% { transform: scale(1.12); }
+}
+
+/* -------------------------------------------------------------
+   6. B2B Corporate Pillars
+   ------------------------------------------------------------- */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.pillar-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 3.5rem 2.5rem;
+  box-shadow: var(--shadow-premium);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, var(--accent-gold), var(--accent-amber));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: var(--transition-smooth);
+}
+
+.pillar-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-gold);
+}
+
+.pillar-card:hover::before {
+  transform: scaleX(1);
+}
+
+.pillar-icon-box {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(197, 168, 128, 0.08);
+  border-radius: 4px;
+  color: var(--accent-gold);
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+}
+
+.pillar-title {
+  font-size: 1.5rem;
+  color: var(--primary-obsidian);
+  margin-bottom: 1.25rem;
+}
+
+.pillar-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* -------------------------------------------------------------
+   7. Sourcing Categories Section
+   ------------------------------------------------------------- */
+.category-editorial-layout {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2.5rem;
+}
+
+.cat-editorial-card {
+  grid-column: span 4;
+  height: 480px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-premium);
+  transition: var(--transition-smooth);
+  border: 1px solid var(--border-light);
+}
+
+.cat-editorial-card.double-wide {
+  grid-column: span 8;
+}
+
+.cat-media {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  transition: var(--transition-smooth);
+}
+
+.cat-editorial-card:hover .cat-media {
+  transform: scale(1.08);
+}
+
+.cat-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(11, 15, 25, 0) 20%, rgba(11, 15, 25, 0.85) 90%);
+}
+
+.cat-content-block {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  padding: 3rem;
+  color: #ffffff;
+}
+
+.cat-title-label {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cat-desc-para {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  opacity: 0.95;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.cat-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+.cat-action-link span {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.cat-editorial-card:hover .cat-action-link span {
+  transform: translateX(5px);
+}
+
+/* -------------------------------------------------------------
+   8. B2B Wholesale Pricing Calculator Widget
+   ------------------------------------------------------------- */
+.pricing-calculator-section {
+  background-color: var(--primary-obsidian);
+  color: #ffffff;
+  position: relative;
+}
+
+.calculator-wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 5rem;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(197, 168, 128, 0.15);
+  border-radius: 12px;
+  padding: 5rem;
+  box-shadow: var(--shadow-glow);
+}
+
+@media (max-width: 1024px) {
+  .calculator-wrapper {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 3rem;
+  }
+}
+
+.calc-control-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.calc-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff; /* Solid high-contrast white text fallback */
+  background: linear-gradient(135deg, #ffffff, var(--accent-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.calc-subtitle {
+  color: #94a3b8;
+  margin-bottom: 3rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Configurator Custom Inputs */
+.calc-input-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-gold);
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+}
+
+.category-select-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .category-select-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .category-select-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.calc-cat-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 1.25rem 0.5rem;
+  color: #94a3b8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.calc-cat-card span.material-symbols-outlined {
+  font-size: 1.5rem;
+  color: #94a3b8;
+  transition: var(--transition-fast);
+}
+
+.calc-cat-card:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border-color: rgba(197, 168, 128, 0.3);
+}
+
+.calc-cat-card:hover span.material-symbols-outlined {
+  color: #fff;
+}
+
+.calc-cat-card.active {
+  background-color: rgba(197, 168, 128, 0.06);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  box-shadow: 0 0 15px rgba(197, 168, 128, 0.15);
+}
+
+.calc-cat-card.active span.material-symbols-outlined {
+  color: var(--accent-gold);
+}
+
+/* Custom Dropdown Styling */
+.select-container-dark {
+  position: relative;
+  width: 100%;
+}
+
+.custom-port-dropdown {
+  width: 100%;
+  padding: 1.1rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.select-container-dark::after {
+  content: 'expand_more';
+  font-family: 'Material Symbols Outlined';
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent-gold);
+  pointer-events: none;
+  font-size: 1.25rem;
+}
+
+.custom-port-dropdown:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 15px rgba(197, 168, 128, 0.15);
+}
+
+.custom-port-dropdown option {
+  background-color: #0b0f19;
+  color: #ffffff;
+  padding: 10px;
+}
+
+/* Vertical Timeline Styling inside Results Card */
+.metric-line-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1.75rem;
+  margin-top: 0.5rem;
+}
+
+.timeline-visual-bar {
+  display: flex;
+  height: 28px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.timeline-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-segment::before {
+  content: attr(data-label);
+  position: absolute;
+  white-space: nowrap;
+}
+
+.production-seg {
+  background: linear-gradient(90deg, #d97706, var(--accent-gold));
+}
+
+.voyage-seg {
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+}
+
+.customs-seg {
+  background: linear-gradient(90deg, #065f46, #10b981);
+}
+
+.timeline-caption-text {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-top: 0.25rem;
+}
+
+.slider-container {
+  margin-bottom: 4rem;
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Custom Styled Input Range Slider */
+.slider-input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+  margin-bottom: 2rem;
+}
+
+.slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--accent-gold);
+  transition: transform 0.1s ease;
+}
+
+.slider-input::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.slider-ticks {
+  display: flex;
+  justify-content: space-between;
+  color: #64748b;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.tier-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.tier-highlight-card {
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  text-align: center;
+  transition: var(--transition-fast);
+}
+
+.tier-highlight-card.active {
+  background-color: rgba(197, 168, 128, 0.03);
+  border-color: rgba(197, 168, 128, 0.3);
+}
+
+.tier-h-name {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+}
+
+.tier-h-val {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Calculator Result Panel */
+.calc-result-panel {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(197, 168, 128, 0.2);
+  border-radius: 8px;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.result-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.res-tier-name {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-gold);
+  margin-bottom: 1rem;
+}
+
+.res-volume-display {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.result-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.metric-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.m-label {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.m-val {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.m-val.highlight-gold {
+  color: var(--accent-gold);
+  font-size: 1.5rem;
+}
+
+/* -------------------------------------------------------------
+   9. Supply Chain Lane Map & Stats
+   ------------------------------------------------------------- */
+.sourcing-map-section {
+  position: relative;
+  background-color: var(--bg-white);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.map-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.map-details {
+  padding-right: 2rem;
+}
+
+.stats-grid-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.stat-metric-card {
+  text-align: left;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4vw, 3.8rem);
+  font-weight: 800;
+  color: var(--accent-gold);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Visual Lane Map Connector Graphic */
+.map-visual-panel {
+  position: relative;
+  height: 480px;
+  background-color: rgba(11, 15, 25, 0.02);
+  border: 1px dashed var(--border-medium);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Abstract B2B Lanes Graphic */
+.lane-node {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: var(--accent-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--accent-gold);
+  z-index: 2;
+}
+
+.node-dubai { top: 60%; left: 70%; }
+.node-wyoming { top: 40%; left: 25%; }
+
+.lane-label {
+  position: absolute;
+  color: var(--primary-obsidian);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 20px;
+  transform: translateX(-35%);
+}
+
+.lane-path {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Animated Sourcing Lane Link */
+.connector-line {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  width: 45%;
+  height: 2px;
+  background: linear-gradient(to right, var(--accent-gold), var(--accent-amber));
+  transform-origin: left;
+  transform: rotate(20deg);
+  overflow: hidden;
+}
+
+.connector-pulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, #ffffff, transparent);
+  animation: linkPulse 3s infinite ease-in-out;
+}
+
+@keyframes linkPulse {
+  0% { left: -30%; }
+  100% { left: 100%; }
+}
+
+/* -------------------------------------------------------------
+   10. Corporate Testimonials
+   ------------------------------------------------------------- */
+.testimonials-row-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.testimonial-editorial-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 3.5rem 3rem;
+  box-shadow: var(--shadow-premium);
+  position: relative;
+}
+
+.quote-symbol {
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  color: rgba(197, 168, 128, 0.15);
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  line-height: 1;
+}
+
+.testimonial-quote-text {
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-client-meta {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-top: 1px solid var(--border-light);
+  padding-top: 2rem;
+}
+
+.client-avatar-placeholder {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(197, 168, 128, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-gold);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.client-name-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.c-name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.c-company {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* -------------------------------------------------------------
+   11. B2B Sourcing Intake Inquiry Form
+   ------------------------------------------------------------- */
+.sourcing-portal-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 6rem;
+}
+
+.sourcing-faq-block {
+  padding-right: 2rem;
+}
+
+.faq-accordion-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.faq-item {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: var(--transition-fast);
+}
+
+.faq-header {
+  padding: 1.75rem 2.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.faq-header h4 {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--primary-obsidian);
+}
+
+.faq-icon-arrow {
+  color: var(--accent-gold);
+  transition: var(--transition-fast);
+}
+
+.faq-item.active {
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-glow);
+}
+
+.faq-item.active .faq-icon-arrow {
+  transform: rotate(180deg);
+}
+
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.faq-body-inner {
+  padding: 0 2.25rem 2.25rem 2.25rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Sourcing Request Form Details */
+.sourcing-form-panel {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-medium);
+  border-radius: 8px;
+  padding: 5rem 4.5rem;
+  box-shadow: var(--shadow-premium);
+  position: relative;
+}
+
+.form-header-block {
+  margin-bottom: 4rem;
+}
+
+.form-header-block h3 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.form-header-block p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.form-grid-fields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.form-group-full {
+  grid-column: span 2;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+}
+
+.form-input-text,
+.form-select {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1.5px solid var(--border-medium);
+  padding: 0.75rem 0;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.form-input-text:focus,
+.form-select:focus {
+  border-bottom-color: var(--accent-gold);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-submit-block {
+  margin-top: 4rem;
+}
+
+/* Form success message */
+.form-status-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--bg-white);
+  border-radius: 8px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.form-status-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.success-icon-badge {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(197, 168, 128, 0.1);
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-glow);
+}
+
+/* -------------------------------------------------------------
+   12. About Editorial Layout Elements
+   ------------------------------------------------------------- */
+.about-hero-block {
+  position: relative;
+  padding: 12rem 0 8rem 0;
+  background-color: #060911;
+  color: #fff;
+  text-align: center;
+}
+
+.about-narrative-split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.narrative-image-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-premium);
+  border: 1px solid var(--border-light);
+}
+
+.narrative-image-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--accent-gold);
+  border-radius: 8px;
+  margin: 1.5rem;
+  pointer-events: none;
+}
+
+.values-grid-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  margin-top: 6rem;
+}
+
+.value-card-details {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 4rem 3rem;
+  box-shadow: var(--shadow-premium);
+}
+
+.value-card-num {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--accent-gold);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+/* -------------------------------------------------------------
+   13. Premium Editorial Footer
+   ------------------------------------------------------------- */
+.mrt-editorial-footer {
+  background-color: #060911;
+  color: #94a3b8;
+  border-top: 1px solid rgba(197, 168, 128, 0.15);
+  padding: 8rem 0 4rem 0;
+}
+
+.footer-main-columns {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  gap: 5rem;
+  margin-bottom: 6rem;
+}
+
+.footer-brand-logo-text {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+.footer-brand-bio {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.footer-social-strip {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.social-circle-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: var(--transition-fast);
+}
+
+.social-circle-link:hover {
+  background-color: var(--accent-gold);
+  border-color: var(--accent-gold);
+}
+
+.footer-col-header {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #fff;
+  margin-bottom: 2.5rem;
+}
+
+.footer-menu-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footer-menu-link {
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+}
+
+.footer-menu-link:hover {
+  color: var(--accent-gold);
+  padding-left: 5px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.footer-contact-icon {
+  color: var(--accent-gold);
+  font-size: 1.25rem;
+  margin-top: 3px;
+}
+
+.footer-bottom-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  font-size: 0.85rem;
+}
+
+/* -------------------------------------------------------------
+   14. Mobile Slide-out Menu
+   ------------------------------------------------------------- */
+.nav-toggle-burger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--primary-obsidian);
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.mrt-nav.scrolled .nav-toggle-burger {
+  color: #fff;
+}
+
+.mobile-navigation-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(11, 15, 25, 0.98);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.mobile-navigation-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-close-btn {
+  position: absolute;
+  top: 2.5rem;
+  right: 4rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 2.5rem;
+}
+
+.mobile-links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.mobile-nav-item {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+.mobile-nav-item:hover,
+.mobile-nav-item.active {
+  color: var(--accent-gold);
+}
+
+/* -------------------------------------------------------------
+   15. Responsive Styling Adjustments (Media Queries)
+   ------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .mrt-nav {
+    padding: 0 3rem;
+  }
+  .nav-links {
+    gap: 2.5rem;
+  }
+  .calculator-wrapper {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    padding: 4rem;
+  }
+  .map-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .map-details {
+    padding-right: 0;
+  }
+  .sourcing-portal-layout {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+  }
+  .sourcing-faq-block {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-links, .nav-right-actions .btn-gold {
+    display: none;
+  }
+  .nav-toggle-burger {
+    display: block;
+  }
+  .category-editorial-layout {
+    gap: 2rem;
+  }
+  .cat-editorial-card,
+  .cat-editorial-card.double-wide {
+    grid-column: span 6;
+  }
+  .about-narrative-split {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .footer-main-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  .section-padding {
+    padding: 5rem 0;
+  }
+  .hero-button-group {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .hero-button-group a,
+  .hero-button-group button {
+    width: 100%;
+    justify-content: center;
+  }
+  .cat-editorial-card,
+  .cat-editorial-card.double-wide {
+    grid-column: span 12;
+    height: 380px;
+  }
+  .tier-highlights {
+    grid-template-columns: 1fr;
+  }
+  .stats-grid-row {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .testimonials-row-grid {
+    grid-template-columns: 1fr;
+  }
+  .sourcing-form-panel {
+    padding: 3rem 2rem;
+  }
+  .form-grid-fields {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .form-group-full {
+    grid-column: span 1;
+  }
+  .values-grid-cards {
+    grid-template-columns: 1fr;
+  }
+  .footer-main-columns {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}

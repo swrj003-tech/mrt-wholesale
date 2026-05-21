@@ -1,0 +1,16 @@
+# OS metadata files
+.DS_Store
+Thumbs.db
+
+# Temp/test files
+test_write.txt
+
+# Local log files
+*.log
+
+# Unused binary/product assets bloating git payload
+assets/products/
+assets/categories/
+assets/uploads/
+assets/editorial_v3/
+assets/images/
