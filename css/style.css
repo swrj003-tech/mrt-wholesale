@@ -1575,104 +1575,506 @@ img {
 /* -------------------------------------------------------------
    15. Responsive Styling Adjustments (Media Queries)
    ------------------------------------------------------------- */
+
+/* ---- Tablet Landscape / Small Desktop ---- */
 @media (max-width: 1200px) {
   .mrt-nav {
-    padding: 0 3rem;
+    padding: 0 2rem;
   }
   .nav-links {
-    gap: 2.5rem;
+    gap: 2rem;
   }
   .calculator-wrapper {
     grid-template-columns: 1fr;
-    gap: 4rem;
-    padding: 4rem;
+    gap: 3rem;
+    padding: 3rem;
   }
   .map-layout-grid {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 3rem;
   }
   .map-details {
     padding-right: 0;
   }
   .sourcing-portal-layout {
     grid-template-columns: 1fr;
-    gap: 5rem;
+    gap: 4rem;
   }
   .sourcing-faq-block {
     padding-right: 0;
   }
 }
 
+/* ---- Tablet Portrait ---- */
 @media (max-width: 992px) {
+  .mrt-nav {
+    height: 70px;
+    padding: 0 1.5rem;
+  }
+  .mrt-nav.scrolled {
+    height: 60px;
+  }
+  .logo-text {
+    font-size: 1.3rem;
+  }
   .nav-links, .nav-right-actions .btn-gold {
     display: none;
   }
   .nav-toggle-burger {
     display: block;
+    color: #fff;
+  }
+  .b2b-hero {
+    padding-top: 70px;
   }
   .category-editorial-layout {
-    gap: 2rem;
+    gap: 1.5rem;
   }
   .cat-editorial-card,
   .cat-editorial-card.double-wide {
     grid-column: span 6;
+    height: 360px;
+  }
+  .cat-content-block {
+    padding: 2rem;
+  }
+  .cat-title-label {
+    font-size: 1.4rem;
   }
   .about-narrative-split {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 3rem;
+  }
+  .about-hero-block {
+    padding: 9rem 0 5rem 0;
   }
   .footer-main-columns {
     grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 0 1.5rem;
+    gap: 3rem;
   }
   .section-padding {
     padding: 5rem 0;
   }
+  .section-desc {
+    margin-bottom: 3rem;
+  }
+  .calc-result-panel {
+    padding: 3rem 2rem;
+  }
+  .res-volume-display {
+    font-size: 2rem;
+  }
+  .m-val.highlight-gold {
+    font-size: 1.1rem;
+  }
+  .m-val {
+    font-size: 1rem;
+    text-align: right;
+    max-width: 55%;
+  }
+  .m-label {
+    font-size: 0.85rem;
+  }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+  .section-padding {
+    padding: 4rem 0;
+  }
+  .mrt-nav {
+    height: 64px;
+    padding: 0 1.25rem;
+  }
+  .mrt-nav.scrolled {
+    height: 56px;
+  }
+  .logo-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 1.2rem;
+  }
+  .logo-text {
+    font-size: 1.15rem;
+  }
+  .b2b-hero {
+    padding-top: 64px;
+    min-height: 85vh;
+  }
+  .hero-content-wrapper {
+    padding: 1.5rem;
+  }
+  .hero-title-large {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    margin-bottom: 1.25rem;
+  }
+  .hero-subtitle-sub {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
   .hero-button-group {
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1rem;
   }
   .hero-button-group a,
   .hero-button-group button {
     width: 100%;
     justify-content: center;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.8rem;
   }
+  .hero-scroll-indicator {
+    display: none;
+  }
+  .section-title {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+    margin-bottom: 1.25rem;
+  }
+  .section-desc {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .tagline {
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Pillars */
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .pillar-card {
+    padding: 2.5rem 2rem;
+  }
+  .pillar-card:hover {
+    transform: none;
+  }
+
+  /* Category Cards */
   .cat-editorial-card,
   .cat-editorial-card.double-wide {
     grid-column: span 12;
-    height: 380px;
+    height: 300px;
+  }
+  .cat-content-block {
+    padding: 1.5rem;
+  }
+  .cat-title-label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .cat-desc-para {
+    font-size: 0.85rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Calculator */
+  .calculator-wrapper {
+    padding: 2rem 1.25rem;
+    gap: 2rem;
+    border-radius: 8px;
+  }
+  .calc-title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  .calc-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+  .category-select-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .calc-cat-card {
+    padding: 1rem 0.5rem;
+    font-size: 0.7rem;
+  }
+  .slider-labels {
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+  }
+  .slider-container {
+    margin-bottom: 2.5rem;
+  }
+  .slider-ticks {
+    font-size: 0.65rem;
+  }
+  .slider-ticks span:nth-child(2) {
+    display: none;
   }
   .tier-highlights {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .tier-highlight-card {
+    padding: 1rem;
+  }
+  .tier-h-name {
+    font-size: 0.75rem;
+  }
+  .tier-h-val {
+    font-size: 0.95rem;
+  }
+  .calc-result-panel {
+    padding: 2rem 1.5rem;
+  }
+  .result-header {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .res-tier-name {
+    font-size: 0.75rem;
+  }
+  .res-volume-display {
+    font-size: 1.6rem;
+  }
+  .result-metrics {
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .metric-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+  .m-label {
+    font-size: 0.8rem;
+  }
+  .m-val {
+    font-size: 0.95rem;
+    text-align: left;
+    max-width: 100%;
+    word-break: break-word;
+  }
+  .m-val.highlight-gold {
+    font-size: 1rem;
+  }
+  .timeline-visual-bar {
+    height: 22px;
+  }
+  .timeline-segment {
+    font-size: 0.55rem;
+  }
+  .timeline-caption-text {
+    font-size: 0.8rem;
+  }
+
+  /* Supply Map */
+  .map-layout-grid {
+    gap: 2rem;
   }
   .stats-grid-row {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
   }
+  .stat-number {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
+  /* Testimonials */
   .testimonials-row-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
+  .testimonial-editorial-card {
+    padding: 2.5rem 2rem;
+  }
+  .testimonial-quote-text {
+    font-size: 0.95rem;
+  }
+
+  /* About Page */
+  .about-hero-block {
+    padding: 8rem 0 4rem 0;
+  }
+  .values-grid-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .value-card-details {
+    padding: 2.5rem 2rem;
+  }
+  .value-card-num {
+    font-size: 2rem;
+  }
+
+  /* Contact Page */
   .sourcing-form-panel {
-    padding: 3rem 2rem;
+    padding: 2.5rem 1.5rem;
+  }
+  .form-header-block {
+    margin-bottom: 2.5rem;
+  }
+  .form-header-block h3 {
+    font-size: 1.6rem;
   }
   .form-grid-fields {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
   .form-group-full {
     grid-column: span 1;
   }
-  .values-grid-cards {
-    grid-template-columns: 1fr;
+  .form-submit-block {
+    margin-top: 2.5rem;
+  }
+  .faq-header {
+    padding: 1.25rem 1.5rem;
+  }
+  .faq-header h4 {
+    font-size: 0.95rem;
+  }
+  .faq-body-inner {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Footer */
+  .mrt-editorial-footer {
+    padding: 4rem 0 2.5rem 0;
   }
   .footer-main-columns {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  .footer-brand-logo-text {
+    font-size: 1.6rem;
+  }
+  .footer-brand-bio {
+    font-size: 0.9rem;
+  }
+  .footer-col-header {
+    margin-bottom: 1.5rem;
+  }
+  .footer-bottom-row {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.25rem;
+    padding-top: 2.5rem;
+    font-size: 0.8rem;
+  }
+  .footer-bottom-row div {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .footer-contact-item p {
+    word-break: break-word;
+  }
+
+  /* Mobile Nav */
+  .mobile-close-btn {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+  .mobile-nav-item {
+    font-size: 1.8rem;
+  }
+  .mobile-links-container {
+    gap: 2rem;
+  }
+}
+
+/* ---- Small Phone ---- */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .section-padding {
+    padding: 3rem 0;
+  }
+  .mrt-nav {
+    height: 56px;
+    padding: 0 1rem;
+  }
+  .mrt-nav.scrolled {
+    height: 50px;
+  }
+  .logo-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+  .logo-text {
+    font-size: 1rem;
+  }
+  .b2b-hero {
+    padding-top: 56px;
+    min-height: 80vh;
+  }
+  .hero-content-wrapper {
+    padding: 1rem;
+  }
+  .hero-title-large {
+    font-size: clamp(1.75rem, 9vw, 2.5rem);
+    line-height: 1.1;
+  }
+  .hero-subtitle-sub {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .btn-gold, .btn-outline {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.75rem;
+  }
+  .category-select-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .cat-editorial-card,
+  .cat-editorial-card.double-wide {
+    height: 250px;
+  }
+  .cat-title-label {
+    font-size: 1.05rem;
+  }
+  .calc-title {
+    font-size: 1.35rem;
+  }
+  .calculator-wrapper {
+    padding: 1.5rem 1rem;
+  }
+  .calc-result-panel {
+    padding: 1.5rem 1rem;
+  }
+  .res-volume-display {
+    font-size: 1.3rem;
+  }
+  .timeline-segment::before {
+    font-size: 0.5rem;
+  }
+  .stats-grid-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .about-hero-block {
+    padding: 6.5rem 0 3rem 0;
+  }
+  .sourcing-form-panel {
+    padding: 2rem 1rem;
+  }
+  .form-header-block h3 {
+    font-size: 1.35rem;
+  }
+  .testimonial-editorial-card {
+    padding: 2rem 1.5rem;
+  }
+  .mobile-nav-item {
+    font-size: 1.5rem;
+  }
+  .mobile-links-container {
+    gap: 1.5rem;
   }
 }
