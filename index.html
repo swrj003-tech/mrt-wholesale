@@ -14,7 +14,12 @@
   <!-- Theme Initializer to prevent Flash of Un-themed Content (FOUC) -->
   <script>
     (function() {
-      const savedTheme = localStorage.getItem('mrt-theme') || 'light';
+      let savedTheme = 'light';
+      try {
+        savedTheme = localStorage.getItem('mrt-theme') || 'light';
+      } catch (e) {
+        console.warn('localStorage is not accessible:', e);
+      }
       document.documentElement.setAttribute('data-theme', savedTheme);
     })();
   </script>

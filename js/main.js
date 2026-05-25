@@ -75,7 +75,12 @@ function initThemeToggle() {
   const icon = themeBtn.querySelector('span');
 
   // Check saved preferences
-  const savedTheme = localStorage.getItem('mrt-theme') || 'light';
+  let savedTheme = 'light';
+  try {
+    savedTheme = localStorage.getItem('mrt-theme') || 'light';
+  } catch (e) {
+    console.warn('localStorage is not accessible:', e);
+  }
   document.documentElement.setAttribute('data-theme', savedTheme);
   updateThemeIcon(savedTheme, icon);
 
@@ -84,7 +89,11 @@ function initThemeToggle() {
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
     
     document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('mrt-theme', newTheme);
+    try {
+      localStorage.setItem('mrt-theme', newTheme);
+    } catch (e) {
+      console.warn('localStorage is not writable:', e);
+    }
     updateThemeIcon(newTheme, icon);
   });
 }

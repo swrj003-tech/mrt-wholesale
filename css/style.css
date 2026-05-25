@@ -437,44 +437,70 @@ img {
 
 .hero-scroll-indicator {
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  font-size: 0.75rem;
+  gap: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.4em;
+  color: rgba(255, 255, 255, 0.55);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.hero-scroll-indicator span {
+  transition: var(--transition-fast);
+}
+
+.hero-scroll-indicator:hover span {
   color: var(--accent-gold);
+  letter-spacing: 0.45em;
 }
 
 .scroll-icon {
-  width: 24px;
-  height: 40px;
-  border: 1.5px solid var(--accent-gold);
-  border-radius: 12px;
+  width: 22px;
+  height: 36px;
+  border: 1.5px solid rgba(197, 168, 128, 0.4);
+  border-radius: 100px;
   position: relative;
+  box-shadow: 0 0 10px rgba(197, 168, 128, 0.1);
+  transition: var(--transition-fast);
+}
+
+.hero-scroll-indicator:hover .scroll-icon {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 15px rgba(197, 168, 128, 0.3);
 }
 
 .scroll-icon::after {
   content: '';
   position: absolute;
-  top: 8px;
+  top: 6px;
   left: 50%;
   transform: translateX(-50%);
-  width: 4px;
-  height: 8px;
+  width: 3px;
+  height: 6px;
   background-color: var(--accent-gold);
-  border-radius: 2px;
-  animation: mouseWheel 2s infinite ease;
+  border-radius: 100px;
+  animation: mouseWheel 2.2s infinite cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes mouseWheel {
-  0% { opacity: 1; top: 8px; }
-  100% { opacity: 0; top: 22px; }
+  0% { opacity: 1; top: 6px; }
+  100% { opacity: 0; top: 20px; }
+}
+
+/* Hide on short viewports to prevent overlap with hero content buttons */
+@media (max-height: 780px) {
+  .hero-scroll-indicator {
+    opacity: 0;
+    pointer-events: none;
+  }
 }
 
 @keyframes slowZoom {
@@ -1658,12 +1684,14 @@ img {
   padding: 6rem 2rem 3rem 2rem;
   overflow-y: auto;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: var(--transition-smooth);
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 .mobile-navigation-overlay.active {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
 }
 
@@ -1755,6 +1783,9 @@ img {
   .nav-toggle-burger {
     display: block;
     color: #fff;
+  }
+  .hero-scroll-indicator {
+    display: none; /* Hide on all tablet/mobile viewports */
   }
   .b2b-hero {
     padding-top: 70px;
@@ -1886,9 +1917,6 @@ img {
     justify-content: center;
     padding: 0.9rem 1.5rem;
     font-size: 0.8rem;
-  }
-  .hero-scroll-indicator {
-    display: none;
   }
   .section-title {
     font-size: clamp(1.75rem, 6vw, 2.5rem);
