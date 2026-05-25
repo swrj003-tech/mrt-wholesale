@@ -205,7 +205,7 @@ function initWholesaleCalculator() {
     const destPortName = portLabels[selectedPort] || 'Destination Port';
 
     // Display formatted delivery timeline text
-    speedDisplay.textContent = `Est. Sourcing & Voyage Total: ${totalTransit} Days (FOB Factory to ${destPortName})`;
+    speedDisplay.textContent = `Production: ${productionDays}d | Voyage: ${voyageDays}d | Port: ${portClearingDays}d — Est. Total: ${totalTransit} Days to ${destPortName}`;
 
     // Update the visual timeline bar
     if (timelineBar) {

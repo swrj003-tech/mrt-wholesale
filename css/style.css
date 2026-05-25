@@ -1507,19 +1507,65 @@ img {
 }
 
 /* -------------------------------------------------------------
+   Responsive Utility Classes (Refactored from Inline Styles)
+   ------------------------------------------------------------- */
+.standards-panel {
+  background-color: var(--bg-cream);
+  border: 1px solid var(--border-medium);
+  border-radius: 8px;
+  padding: 4rem 3.5rem;
+}
+
+.trade-hubs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-left: 2px solid var(--accent-gold);
+  padding-left: 2rem;
+  margin-bottom: 4rem;
+}
+
+.trust-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  padding: 3rem;
+  border-radius: 8px;
+  transition: var(--transition-smooth);
+}
+.trust-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-gold);
+}
+
+.form-status-overlay h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-obsidian);
+}
+
+.form-status-overlay p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 3.5rem;
+  max-width: 480px;
+}
+
+/* -------------------------------------------------------------
    14. Mobile Slide-out Menu
    ------------------------------------------------------------- */
 .nav-toggle-burger {
   display: none;
   background: none;
   border: none;
-  color: var(--primary-obsidian);
+  color: #ffffff; /* Always light since header background is dark */
   cursor: pointer;
   font-size: 2rem;
+  transition: var(--transition-fast);
 }
 
 .mrt-nav.scrolled .nav-toggle-burger {
-  color: #fff;
+  color: #ffffff;
 }
 
 .mobile-navigation-overlay {
@@ -1529,9 +1575,10 @@ img {
   z-index: 2000;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Support scrolling on short viewports */
   align-items: center;
-  padding: 4rem;
+  padding: 6rem 2rem 3rem 2rem;
+  overflow-y: auto;
   opacity: 0;
   pointer-events: none;
   transition: var(--transition-smooth);
@@ -1558,6 +1605,7 @@ img {
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
+  margin: auto 0;
 }
 
 .mobile-nav-item {
@@ -1589,6 +1637,9 @@ img {
     gap: 3rem;
     padding: 3rem;
   }
+  .category-select-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .map-layout-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -1602,6 +1653,9 @@ img {
   }
   .sourcing-faq-block {
     padding-right: 0;
+  }
+  .footer-main-columns {
+    gap: 3rem;
   }
 }
 
@@ -1648,6 +1702,13 @@ img {
   .about-hero-block {
     padding: 9rem 0 5rem 0;
   }
+  .testimonials-row-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .testimonials-row-grid .testimonial-editorial-card:nth-child(3) {
+    grid-column: span 2;
+  }
   .footer-main-columns {
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
@@ -1691,6 +1752,23 @@ img {
   }
   .mrt-nav.scrolled {
     height: 56px;
+  }
+  .nav-right-actions {
+    gap: 1rem;
+  }
+  .standards-panel {
+    padding: 2.5rem 1.25rem;
+  }
+  .trade-hubs-container {
+    padding-left: 1.25rem;
+    margin-bottom: 2.5rem;
+    gap: 1.5rem;
+  }
+  .trust-card {
+    padding: 2rem 1.25rem;
+  }
+  .timeline-segment::before {
+    display: none;
   }
   .logo-icon {
     width: 34px;
@@ -1886,6 +1964,9 @@ img {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+  .testimonials-row-grid .testimonial-editorial-card:nth-child(3) {
+    grid-column: span 1;
+  }
   .testimonial-editorial-card {
     padding: 2.5rem 2rem;
   }
@@ -1912,6 +1993,16 @@ img {
   /* Contact Page */
   .sourcing-form-panel {
     padding: 2.5rem 1.5rem;
+  }
+  .form-status-overlay {
+    padding: 2.5rem 1.25rem;
+  }
+  .form-status-overlay h3 {
+    font-size: 1.6rem;
+  }
+  .form-status-overlay p {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
   }
   .form-header-block {
     margin-bottom: 2.5rem;
