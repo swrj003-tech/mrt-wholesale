@@ -59,6 +59,23 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Custom Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--primary-obsidian);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent-gold), var(--accent-gold-hover));
+  border-radius: 5px;
+  border: 2px solid var(--primary-obsidian);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--accent-gold-hover), var(--accent-amber));
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-cream);
@@ -253,7 +270,6 @@ img {
   color: #fff;
 }
 
-/* Call To Action Buttons */
 .btn-gold {
   background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-hover));
   color: #fff;
@@ -270,6 +286,35 @@ img {
   box-shadow: var(--shadow-glow);
   cursor: pointer;
   transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: none;
+}
+
+.btn-gold:hover::after {
+  animation: buttonShine 0.85s ease-in-out;
+}
+
+@keyframes buttonShine {
+  100% {
+    left: 150%;
+  }
 }
 
 .btn-gold:hover {
@@ -550,12 +595,25 @@ img {
 
 .cat-content-block {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  width: calc(100% - 4rem);
   z-index: 3;
-  padding: 3rem;
+  padding: 2.5rem;
   color: #ffffff;
+  background: rgba(11, 15, 25, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: var(--transition-smooth);
+}
+.cat-editorial-card:hover .cat-content-block {
+  background: rgba(11, 15, 25, 0.60);
+  border-color: rgba(197, 168, 128, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), var(--shadow-glow);
 }
 
 .cat-title-label {
@@ -675,7 +733,7 @@ img {
 .calc-cat-card {
   background-color: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 1.25rem 0.5rem;
   color: #94a3b8;
   display: flex;
@@ -687,7 +745,7 @@ img {
   font-family: var(--font-sans);
   font-size: 0.8rem;
   font-weight: 600;
-  transition: var(--transition-fast);
+  transition: var(--transition-smooth);
 }
 
 .calc-cat-card span.material-symbols-outlined {
@@ -700,6 +758,8 @@ img {
   background-color: rgba(255, 255, 255, 0.05);
   color: #fff;
   border-color: rgba(197, 168, 128, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .calc-cat-card:hover span.material-symbols-outlined {
@@ -710,7 +770,8 @@ img {
   background-color: rgba(197, 168, 128, 0.06);
   border-color: var(--accent-gold);
   color: var(--accent-gold);
-  box-shadow: 0 0 15px rgba(197, 168, 128, 0.15);
+  box-shadow: 0 0 20px rgba(197, 168, 128, 0.2);
+  transform: translateY(-2px);
 }
 
 .calc-cat-card.active span.material-symbols-outlined {
@@ -903,13 +964,21 @@ img {
 
 /* Calculator Result Panel */
 .calc-result-panel {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
-  border: 1px solid rgba(197, 168, 128, 0.2);
-  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(11, 15, 25, 0.6) 0%, rgba(11, 15, 25, 0.2) 100%);
+  border: 1px solid rgba(197, 168, 128, 0.25);
+  border-radius: 12px;
   padding: 4rem 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: var(--transition-smooth);
+}
+.calc-result-panel:hover {
+  border-color: rgba(197, 168, 128, 0.45);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1), var(--shadow-glow);
 }
 
 .result-header {
@@ -1510,10 +1579,19 @@ img {
    Responsive Utility Classes (Refactored from Inline Styles)
    ------------------------------------------------------------- */
 .standards-panel {
-  background-color: var(--bg-cream);
-  border: 1px solid var(--border-medium);
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--accent-gold);
   border-radius: 8px;
   padding: 4rem 3.5rem;
+  box-shadow: var(--shadow-premium);
+  transition: var(--transition-smooth);
+}
+.standards-panel:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-premium), var(--shadow-glow);
+  border-color: var(--border-medium);
+  border-left-color: var(--accent-amber);
 }
 
 .trade-hubs-container {
@@ -1691,6 +1769,10 @@ img {
   }
   .cat-content-block {
     padding: 2rem;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    width: calc(100% - 3rem);
   }
   .cat-title-label {
     font-size: 1.4rem;
@@ -1841,6 +1923,10 @@ img {
   }
   .cat-content-block {
     padding: 1.5rem;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    width: calc(100% - 2rem);
   }
   .cat-title-label {
     font-size: 1.2rem;
